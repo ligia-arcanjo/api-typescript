@@ -1,4 +1,4 @@
-import IProduct from '../interfaces/productInterface';
+import IProduct from '../interfaces/IProduct';
 import productsModel from '../models/productsModel';
 
 const getAllProducts = () => productsModel.getAllProducts();
