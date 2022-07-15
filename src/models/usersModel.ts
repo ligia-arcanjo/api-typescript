@@ -11,4 +11,13 @@ const createUser = async (user: IUser) => {
   return result.affectedRows;
 };
 
-export default { createUser };
+const getUser = async (username: string): Promise<IUser[]> => {
+  const [userInfo] = await connection.execute(
+    'SELECT * FROM Trybesmith.Users WHERE username = ?',
+    [username],
+  );
+
+  return userInfo as IUser[];
+};
+
+export default { createUser, getUser };
